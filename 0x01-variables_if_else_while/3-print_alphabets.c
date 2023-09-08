@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * C program in lower case
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -14,6 +16,5 @@ int main(void)
 	for (low = 'A'; low <= 'Z'; low++)
 		putchar(low);
 	putchar("\n");
-
 	return (0);
 }
