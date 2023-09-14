@@ -6,22 +6,21 @@
 */
 void print_triangle(int size)
 {
-int inc1, inc2;
+	int cin1, cin2;
 
-if (size > 0)
-{
-for (inc1 = 1; inc1 <= size; inc1++)
-{
-for ((inc2 = size - inc1); inc2 > 0; inc2--)
-_putchar(' ');
+	if (size > 0)
+	{
+		for (cin1 = 1; cin1 <= size; cin1++)
+		{
+			for ((cin2 = size - cin1); cin2 > 0; cin2--)
+				_putchar(' ');
+			for (cin2 = 0; cin2 < cin1; cin2++)
+				_putchar('#');
 
-for (inc2 = 0; inc2 < inc1; inc2++)
-_putchar('#');
-
-if (inc1 == size)
-continue;
-
-_putchar('\n');
+			if (cin1 == size)
+				continue;
+			_putchar('\n');
+		}
+	}
+	_putchar('\n');
 }
-}
-_putchar('\n');
