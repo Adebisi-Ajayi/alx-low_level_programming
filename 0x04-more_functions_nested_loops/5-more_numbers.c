@@ -3,7 +3,7 @@
 /**
  * more_numbers - prints number to 14
  *
- * Return: returns notjhing
+ * Return: returns nothing
  */
 
 void more_numbers(void)
@@ -18,7 +18,7 @@ void more_numbers(void)
 			{
 				_putchar((No2 / 10) + '0');
 						}
-						_putchar((No2 / 10) + '0');
+						_putchar((No2 % 10) + '0');
 						}
 
 
