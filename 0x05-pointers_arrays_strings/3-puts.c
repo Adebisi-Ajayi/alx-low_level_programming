@@ -4,9 +4,10 @@
  *_puts - prints a string
  * @str: string to print
  *
- * Description: print a string
- * on success: return the number of characters printed
+ * Description: prints a string
+ * On success: return the number of characters printed
  */
+
 void _puts(char *str)
 {
 	while (*str != '\0')
@@ -14,5 +15,5 @@ void _puts(char *str)
 		putchar(*str);
 		str++;
 	}
-	putchar('\0');
+	putchar('\n');
 }
