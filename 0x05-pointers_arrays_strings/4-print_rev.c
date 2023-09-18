@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_rev - print string in reverse order
  * @s: string to print
