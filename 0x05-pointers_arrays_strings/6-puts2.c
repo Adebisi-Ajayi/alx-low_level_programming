@@ -4,7 +4,7 @@
  * @str: string to be printed
  *
  * Return: void
- */
+ **/
 
 void  puts2(char *str)
 {
@@ -14,7 +14,7 @@ void  puts2(char *str)
 	{
 		if (i % 2 == 0)
 			_putchar(str[i]);
-		i--;
+		i++;
 	}
 
 	_putchar('\n');
