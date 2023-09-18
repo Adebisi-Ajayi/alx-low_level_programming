@@ -15,5 +15,5 @@ int _strlen(char *s)
 		ade++;
 		s++;
 	}
-	retun ade;
+	return ade;
 }
