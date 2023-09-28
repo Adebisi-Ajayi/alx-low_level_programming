@@ -2,16 +2,16 @@
 
 /**
  * factorial - prints the factorial of a given number
- * @ade: return the factorial
+ * @n: return the factorial
  * Return: return int
  */
-int factorial(int ade)
+int factorial(int n)
 {
-	if (ade < 0)
+	if (n < 0)
 	{
 		return (-1);
 	}
-	else if (ade == 0)
+	else if (n == 0)
 	{
 		return (1);
 	}
@@ -19,9 +19,9 @@ int factorial(int ade)
 	{
 		int results = 1;
 
-		for (int ade = 1; ade <= ade; ade++)
+		for (int i = 1; i <= n; n++)
 		{
-			results *= ade;
+			results *= i;
 		}
 		return (results);
 	}
