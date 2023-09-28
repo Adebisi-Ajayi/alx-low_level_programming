@@ -19,7 +19,7 @@ int factorial(int n)
 	{
 		int results = 1;
 
-		for (int i = 1; i <= n; n++)
+		for (int i = 1; i <= n; i++)
 		{
 			results *= i;
 		}
