@@ -17,12 +17,6 @@ int factorial(int n)
 	}
 	else
 	{
-		int results = 1;
-
-		for (int i = 1; i <= n; i++)
-		{
-			results *= i;
-		}
-		return (results);
+		return (n * factorial(n - 1));
 	}
 }
