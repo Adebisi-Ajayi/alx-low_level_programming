@@ -7,11 +7,11 @@
  */
 int factorial(int ade)
 {
-	if (n < 0)
+	if (ade < 0)
 	{
 		return (-1);
 	}
-	else if (n == 0)
+	else if (ade == 0)
 	{
 		return (1);
 	}
@@ -19,7 +19,7 @@ int factorial(int ade)
 	{
 		int results = 1;
 
-		for (int ade = 1; ade <= n; add++)
+		for (int ade = 1; ade <= ade; ade++)
 		{
 			results *= ade;
 		}
