@@ -2,10 +2,10 @@
 
 /**
  * factorial - prints the factorial of a given number
- * @n: return the factorial
+ * @ade: return the factorial
  * Return: return int
  */
-int factorial(int n)
+int factorial(int ade)
 {
 	if (n < 0)
 	{
