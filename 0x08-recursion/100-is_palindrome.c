@@ -37,6 +37,7 @@ int find_strlen(char *s)
 		len += find_strlen(s + len);
 	}
 		return (len);
+}
 
 
 /**
