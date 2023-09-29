@@ -21,3 +21,15 @@ int is_palindrome(char *s)
 	s[len - 1] = '\0';
 	return (is_palindrome(s + 1));
 }
+/**
+ * find_strlen - return the lenght
+ * @s:the string to be measured
+ *
+ * Return: the length of the string
+ */
+int find_strlen(char *s)
+{
+	int len = strlen(s);
+
+	return (len);
+}
