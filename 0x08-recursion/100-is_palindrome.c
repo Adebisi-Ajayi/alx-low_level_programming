@@ -1,59 +1,52 @@
 #include "main.h"
 #include <string.h>
-/**
- * is_palindrome - print the word in reverse order
- * @s: check the word in reverse order
- * Return: retun character
- */
-int is_palindrome(char *s)
-{
-	int len = strlen(s);
+int _strlen_recursion(char *s);
+int helper_palindrome(char *s, int len);
 
-	if (len <= 1)
-	{
-		return (1);
-	}
-	if (s[0] != s[len - 1])
+/**
+ *_strlen_recursion - A function to obtain the length of the string s
+ * @s: A string to calculate length
+ * Return: the length of string s
+ */
+int _strlen_recursion(char *s)
+{
+	if (!*s)
 	{
 		return (0);
 	}
-	s[len - 1] = '\0';
-	return (is_palindrome(s + 1));
+	return (_strlen_recursion(s + 1) + 1);
 }
 
 /**
- * find_strlen - return the lenght
- * @s:the string to be measured
- *
- * Return: the length of the string
+ * is_palindrome - A function that checks if s is a palindrome string
+ * @s: An inpuit string
+ * Return: 1 if is string is a palindrome or 0 in otherwise
  */
-int find_strlen(char *s)
+int is_palindrome(char *s)
 {
-	int len = 0;
+	int len;
 
-	if (*(s + len))
-	{
-		len++;
-		len += find_strlen(s + len);
-	}
-		return (len);
-}
-
-
-/**
- * check_palindrome - checks if a string is palindrome
- * @s: The string to be checked
- * @len: the length of s
- * @index: the index of the string to be checked
- *
- * Return: if the string is palindrome -1
- *  if the string is not palindrome -0
- */
-int check_palindrome(char *s, int len, int index)
-{
-	if (s[index] == s[len / 2])
+	len = _strlen_recursion(s);
+	if (len <= 1)
 		return (1);
-	if (s[index] == s[len - index - 1])
-		return (check_palindrome(s, len, index + 1));
-	return (0);
+	return (helper_palindrome(s, len));
+}
+
+/**
+ * helper_palindrome - A function with a revesed string
+ * @s: An input string
+ * @len: the length of the string s
+ * Return: A reverse string
+ */
+int helper_palindrome(char *s, int len)
+{
+	if (len <= 1)
+		return (1);
+	else if (*s == *(s + len - 1))
+	{
+		return (helper_palindrome(s + 1, len - 2));
+	}
+	else
+		return (0);
+
 }
