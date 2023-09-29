@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <string.h>
 /**
  * is_palindrome - print the word in reverse order
  * @s: check the word in reverse order
