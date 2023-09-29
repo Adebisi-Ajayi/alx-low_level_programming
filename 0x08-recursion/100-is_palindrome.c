@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+
 /**
  * is_palindrome - print the word in reverse order
  * @s: check the word in reverse order
@@ -8,18 +8,13 @@
 
 int is_palindrome(char *s)
 {
-	int len = strlen(s);
+	int index = 0;
+	int len = find_strlen(s);
 
-	if (len <= 1)
-	{
+	if (!(*s))
+
 		return (1);
-	}
-	if (s[0] != s[len - 1])
-	{
-		return (0);
-	}
-	s[len - 1] = '\0';
-	return (is_palindrome(s + 1));
+	return (check_palindrome(s, len, index));
 }
 /**
  * find_strlen - return the lenght
@@ -29,13 +24,15 @@ int is_palindrome(char *s)
  */
 int find_strlen(char *s)
 {
-	int index = 0;
-	int len = find_strlen(s);
+	int len = 0;
 
-	if (!(*s))
-		return (1);
-	return (check_palindrome(s, len, index));
-}
+	if (*(s + len))
+	{
+		len++;
+		len += find_strlen(s + len);
+	}
+		return (len);
+
 
 /**
  * check_palindrome - check if a string is palindrome
