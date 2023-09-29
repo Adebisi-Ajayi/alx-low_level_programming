@@ -5,17 +5,22 @@
  * @s: check the word in reverse order
  * Return: retun character
  */
-
 int is_palindrome(char *s)
 {
-	int index = 0;
-	int len = find_strlen(s);
+	int len = strlen(s);
 
-	if (!(*s))
-
+	if (len <= 1)
+	{
 		return (1);
-	return (check_palindrome(s, len, index));
+	}
+	if (s[0] != s[len - 1])
+	{
+		return (0);
+	}
+	s[len - 1] = '\0';
+	return (is_palindrome(s + 1));
 }
+
 /**
  * find_strlen - return the lenght
  * @s:the string to be measured
@@ -36,7 +41,7 @@ int find_strlen(char *s)
 
 /**
  * check_palindrome - check if a string is palindrome
- * @s: the string to be checked
+@s: the string to be checked
  * @len: the length of s
  * @index: the index
  *
