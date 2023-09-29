@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * wildcmp - compares two strings and return 1 if identical
+ * wildcmp_recursive - compares two strings and return 1 if identical
  * @s1: string to be checked
  * @s2: pattern to be used
  *
@@ -32,5 +32,5 @@ int wildcmp_recursive(char *s1, char *s2)
  */
 int wildcmp(char *s1, char *s2)
 {
-	return wildcmp_recursive(s1, s2);
+	return (wildcmp_recursive(s1, s2));
 }
