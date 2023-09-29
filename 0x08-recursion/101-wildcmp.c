@@ -1,4 +1,6 @@
+#include <stdio.h>
 #include "main.h"
+
 
 /**
  * wildcmp_recursive - compares two strings and return 1 if identical
