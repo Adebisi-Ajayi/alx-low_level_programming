@@ -40,13 +40,13 @@ int find_strlen(char *s)
 
 
 /**
- * check_palindrome - check if a string is palindrome
-@s: the string to be checked
+ * check_palindrome - checks if a string is palindrome
+ * @s: The string to be checked
  * @len: the length of s
- * @index: the index
+ * @index: the index of the string to be checked
  *
- * Return: if the string is palindrome
- *  if the string is not palindrome
+ * Return: if the string is palindrome -1
+ *  if the string is not palindrome -0
  */
 int check_palindrome(char *s, int len, int index)
 {
