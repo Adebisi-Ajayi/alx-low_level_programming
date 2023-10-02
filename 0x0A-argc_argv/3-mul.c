@@ -9,15 +9,19 @@
  */
 int main(int argc, char **argv)
 {
+	int num1, num2, result;
+
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	int number1 = atoi(argv[1]);
-	int number2 = atoi(argv[2]);
-	int cert = number1 * number2;
-
-	printf("%d\n", cert);
-	return (0);
+	else
+	{
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
+		result = num1 * num2;
+		printf("%d\n", result);
+		return (0);
+	}
 }
