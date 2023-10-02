@@ -3,27 +3,6 @@
 #include <ctype.h>
 
 /**
- * add_positive_recursive - A program that adds positive numbers
- * @index: The arguments' counter
- * @argv: The argument's values
- * Return: Always 0 (Success)
- */
-int add_positive_recursive(char **argv, int index)
-{
-	if (argv[index] == NULL)
-	{
-		return (0);
-	}
-	int number = atoi(argv[index]);
-
-	if (number < 0 || !isdigit(argv[index][0]))
-	{
-		printf("Error\n");
-		exit(1);
-	}
-	return (number + add_positive_recursive(argv, index + 1));
-}
-/**
  * main - A program that adds positive numbers
  * @argc: The arguments' counter
  * @argv: The argument's values
@@ -31,13 +10,21 @@ int add_positive_recursive(char **argv, int index)
  */
 int main(int argc, char **argv)
 {
-	if (argc == 1)
-	{
-		printf("0\n");
-		return (0);
-	}
-	int sum = add_positive_recursive(argv, 1);
+	int num, result = 0, i;
 
-	printf("%d\n", sum);
+	while (argc-- > 1)
+	{
+		for (i = 0; argv[argc][i]; i++)
+		{
+			if (!(isdigit(argv[argc][i])))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		num = atoi(argv[argc]);
+		result += num;
+	}
+	printf("%d\n", result);
 	return (0);
 }
