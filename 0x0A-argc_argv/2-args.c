@@ -6,11 +6,11 @@
  *@argv: the arguement function
  * Return: return 0 success
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	for (int i = 0; i < argc; i++)
+	while (argc--)
 	{
-		printf("%s\n", argv[i]);
+		printf("%s\n", argv++);
 	}
 	return (0);
 }
