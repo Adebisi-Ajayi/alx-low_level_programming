@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		puts("Error\n");
+		printf("Error\n");
 		exit(98);
 	}
 	else
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 		no1 = atoi(argv[1]);
 		no2 = atoi(argv[2]);
 		res = no1 * no2;
-		puts("%d\n", res);
+		printf("%d\n", res);
 		return (0);
 	}
 }
