@@ -11,22 +11,30 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
+	char *new_star;
+	unsigned int a = 0, add1 = 0, add2 = 0;
+
 	if (s1 == NULL)
-		s1 == "";
+		s1 = "";
+	while (s1[add1])
+		add1++;
 	if (s2 == NULL)
-		s2 == "";
-	unsigned int len1 = strlen(s1);
-	unsigned int len2 = strlen(s2);
-
-	if (n >= len2)
-		n = len2;
-
-	char *result = (char *)malloc(len1 + n + 1);
-
-	if (result == NULL)
+		s2 = "";
+	while (s2[add2])
+		add2++;
+	if (n >= add2)
+		n = add2;
+	new_star = malloc(add1 + n + 1);
+	if (new_star == NULL)
 		return (NULL);
 
-	strcpy(result, s1);
-	strncat(result, s2, n);
-	return (result);
+	for (; a < (add1 + n); a++)
+	{
+		if (a < add1)
+			new_star[a] = *s1, s1++;
+		else
+			new_star[a] = *s2, s2++;
+	}
+	new_star[a] = '\0';
+	return (new_star);
 }
