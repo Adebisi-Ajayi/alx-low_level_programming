@@ -13,7 +13,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	char *adebisi;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL)
+		return (NULL);
 
 	adebisi = malloc(nmemb * size);
 
