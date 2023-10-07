@@ -9,17 +9,17 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+	unsigned int a = 0;
+	char adebisi;
+
 	if (nmemb == 0 || size == 0)
-	{
-		return (NULL);
-	}
+		return (NULL)
 
-	void *ptr = malloc(nmemb * size);
+	adebisi = malloc(nmemb * size);
 
-	if (ptr == NULL)
-	{
+	if (adebisi == NULL)
 		return (NULL);
-	}
-	memset(ptr, 0, nmemb * size);
-	return (ptr);
+	for (; a < nmemb * size; a++)
+		*(adebisi + a) = 0;
+	return (adebisi);
 }
