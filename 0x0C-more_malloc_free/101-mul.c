@@ -4,11 +4,11 @@
  * main - check the code
  * @argc: number of arguments
  * @argv: arguments
- * Return: nothing
+ * Return: always 0 (success)
  */
 int main(int argc, char **argv)
 {
-	int no1, no2, res;
+	int num1, num2, res;
 
 	if (argc != 3)
 	{
@@ -17,8 +17,8 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		no1 = atoi(argv[1]);
-		no2 = atoi(argv[2]);
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
 		res = no1 * no2;
 		printf("%d\n", res);
 		return (0);
