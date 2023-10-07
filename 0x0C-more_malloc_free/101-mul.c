@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - check the code
- * @argc: number of arguments
- * @argv: arguments
- * Return: always 0 (success)
+ * main - a programm that prints multiplies two numbers
+ * @argc: argument counter
+ * @argv: argument value
+ * Return: return 0 (Success)
  */
 int main(int argc, char **argv)
 {
-	int num1, num2, mul;
+	int num1, num2, result;
 
 	if (argc != 3)
 	{
@@ -19,8 +20,8 @@ int main(int argc, char **argv)
 	{
 		num1 = atoi(argv[1]);
 		num2 = atoi(argv[2]);
-		mul = num1 * num2;
-		printf("%d\n", mul);
+		result = num1 * num2;
+		printf("%d\n", result);
 		return (0);
 	}
 }
