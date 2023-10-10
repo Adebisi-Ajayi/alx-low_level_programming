@@ -1,6 +1,5 @@
-// myheader.h
-#ifndef MYHEADER_H
-#define MYHEADER_H
+#ifndef 0-OBJECT_LIKE_MACRO_H
+#define 0-OBJECT_LIKE_MACRO_H
 
 #define SIZE 1024
 
