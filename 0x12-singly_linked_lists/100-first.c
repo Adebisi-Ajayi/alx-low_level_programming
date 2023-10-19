@@ -4,7 +4,7 @@ void adebisi(void) __attribute__((constructor));
  * adebisi - a constructor
  * Return: nothing
  */
-void adebisi(void) __attribute__((constructor))
+void adebisi(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
