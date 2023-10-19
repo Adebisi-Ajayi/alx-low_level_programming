@@ -4,34 +4,36 @@
 #include <string.h>
 /**
  * add_node - node  to add
+ * @ade: string to hold
  * @head: number of head to count
  * @str: number o the strings
  * Return: nothing
  */
 list_t *add_node(list_t **head, const char *str)
 {
+	list_t *ade;
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	list_t *new_node = (list_t *)malloc(sizeof(list_t));
+	ade = malloc(sizeof(list_t));
 
-	if (new_node == NULL)
+	if (ade == NULL)
 	{
 		return (NULL);
 	}
-	new_node->str = strdup(str);
+	ade->str = strdup(str);
 
-	if (new_node->str == NULL)
+	if (ade->str == NULL)
 	{
-		free(new_node);
+		free(ade);
 		return (NULL);
 	}
 
-	new_node->len = (unsigned int)strlen(str);
-	new_node->next = *head;
+	ade->len = (unsigned int)strlen(str);
+	ade->next = *head;
 
-	*head = new_node;
-	return (new_node);
+	*head = ade;
+	return (ade);
 }
