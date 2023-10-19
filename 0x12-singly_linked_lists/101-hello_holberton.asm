@@ -1,16 +1,19 @@
-#include "lists.h"
-
-section .data
-    hello db "Hello, Holberton",10,0  ; The string to print, followed by a newline and null terminator
-
-section .text
-global adebisi1
 extern printf
 
-adebisi1:
-    push rbp
-    mov rdi, hello  ; Load the address of the string into rdi
-    call printf    ; Call printf to print the string
-    pop rbp
-    ret
+section .data
+msg: 	db "Hello, Holberton", 0
+fmt:	db "%s", 10, 0
 
+section .text
+
+global adebisi1
+
+adebisi1:
+    	push	rbp
+    	mov	rdi,fmt
+	mov 	rsi,msg
+	mov	rax,0
+	call	printf
+	pop	rbp
+	mov	rax,0
+	ret
