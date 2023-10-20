@@ -4,7 +4,6 @@
 #include <string.h>
 /**
  * add_node - node  to add
- * @ade: string to hold
  * @head: number of head to count
  * @str: number o the strings
  * Return: nothing
