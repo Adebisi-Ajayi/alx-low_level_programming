@@ -6,9 +6,9 @@ fmt:	db "%s", 10, 0
 
 section .text
 
-global adebisi1
+global main
 
-adebisi1:
+main:
     	push	rbp
     	mov	rdi,fmt
 	mov 	rsi,msg
