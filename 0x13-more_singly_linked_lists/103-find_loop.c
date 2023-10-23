@@ -1,5 +1,6 @@
 #include "lists.h"
-/*
+#include <stdio.h>
+/**
  * find_listint_loop - check the code
  * @head: the value to find
  * Return: Always 0.
@@ -15,13 +16,6 @@ listint_t *find_listint_loop(listint_t *head)
 
 		if (slower == faster)
 		{
-			slower = head;
-
-			while (slower != faster)
-			{
-				slower = slower->next;
-				faster = faster->next;
-			}
 			return (slower);
 		}
 	}
