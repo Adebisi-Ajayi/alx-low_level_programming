@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (slower && faster && faster->next)
 	{
-		printf("%d\n", slower->n);
+		printf("%d\n", slower->n); 
 		slower = slower->next;
 		faster = faster->next->next;
 
