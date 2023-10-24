@@ -1,32 +1,41 @@
 #include "lists.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
- * print_listint_safe- check the code
+ * print_listint_safe - check the code
  * @head: the value to find
  * Return: Always 0.
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nodes = 0;
-	const listint_t *one = head, *two = head;
+	const listint_t *slower, *faster;
+	size_t count = 0;
 
-	if (head == NULL)
-		exit(98);
+	slower = head;
+	faster = head;
 
-	while (one && two && two->next && head)
+	while (slower && faster && faster->next)
 	{
-		one = one->next;
-		two = two->next->next;
-		if (one == two)
+		printf("%d\n", slower->n);
+		slower = slower->next;
+		faster = faster->next->next;
+
+		if (slower == faster)
 		{
-			printf("-> [%p] %d\n", (void *)head, head->n);
+			printf("-> [%p] %d\n", (void *)faster, faster->n);
 			exit(98);
 		}
-
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		nodes++;
 	}
-	head = NULL;
-	return (nodes);
+	if (!faster)
+	{
+		return (0);
+	}
+
+	while (slower != NULL)
+	{
+		printf("%d\n", slower->n);
+		slower = slower->next;
+		count++;
+	}
+	return (count);
 }
