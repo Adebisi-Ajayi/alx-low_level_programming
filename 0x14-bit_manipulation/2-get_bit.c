@@ -16,7 +16,7 @@ int get_bit(unsigned long int n, unsigned int index)
 		return (1);
 	}
 
-	elk = 1UL << index;
+	elk = (1UL << index);
 
 	if ((n & elk) != 0)
 	{
