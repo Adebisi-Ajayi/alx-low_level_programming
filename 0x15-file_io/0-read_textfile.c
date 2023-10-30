@@ -1,16 +1,22 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/uio.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
+
 /**
- * read_textfile - to read the textile
- * @filename: the filename to print
+ * read_textfile - A function that reads a text file and prints
+ * to the POSIX STDOUT
+ * @filename: the filename to open
  * @letters: the letters to be
  * Return: nothing
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
+	int fd, bytes_read, bytes_written;
 	char *buffer;
 
 	if (filename == NULL)
@@ -23,14 +29,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	buffer = (char *)malloc(sizeof(char) * letters);
+	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 	{
 		close(fd);
 		return (0);
 	}
 
-	ssize_t bytes_read = read(fd, buffer, letters);
+	bytes_read = read(fd, buffer, letters);
 
 	if (bytes_read == -1)
 	{
@@ -39,7 +45,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
+	bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
 
 	if (bytes_written == -1 || bytes_written != bytes_read)
 	{
